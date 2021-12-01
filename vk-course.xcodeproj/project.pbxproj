@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		1257BA41275277B100F178CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1257BA40275277B100F178CB /* Assets.xcassets */; };
 		1257BA44275277B100F178CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1257BA42275277B100F178CB /* LaunchScreen.storyboard */; };
 		1257BA53275279E700F178CB /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1257BA52275279E700F178CB /* FriendsViewController.swift */; };
+		1257BA562752811D00F178CB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1257BA552752811D00F178CB /* Alamofire */; };
+		1257BA612757EC3000F178CB /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1257BA602757EC3000F178CB /* FriendsAPI.swift */; };
+		1257BA642757F12F00F178CB /* Data+PrettyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1257BA632757F12F00F178CB /* Data+PrettyJSON.swift */; };
+		1257BA672757F3A400F178CB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1257BA662757F3A300F178CB /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		1257BA43275277B100F178CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1257BA45275277B100F178CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1257BA52275279E700F178CB /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		1257BA602757EC3000F178CB /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
+		1257BA632757F12F00F178CB /* Data+PrettyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+PrettyJSON.swift"; sourceTree = "<group>"; };
+		1257BA662757F3A300F178CB /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1257BA562752811D00F178CB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,7 @@
 				1257BA4C275277D300F178CB /* App */,
 				1257BA4D275278A900F178CB /* Modules */,
 				1257BA502752791A00F178CB /* Services */,
+				1257BA622757F10000F178CB /* Extensions */,
 				1257BA4B275277BF00F178CB /* Resources */,
 			);
 			path = "vk-course";
@@ -87,6 +96,7 @@
 		1257BA4D275278A900F178CB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1257BA652757F39100F178CB /* Auth */,
 				1257BA4E275278C400F178CB /* Friends */,
 			);
 			path = Modules;
@@ -112,6 +122,7 @@
 		1257BA502752791A00F178CB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1257BA602757EC3000F178CB /* FriendsAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -121,6 +132,22 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1257BA622757F10000F178CB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1257BA632757F12F00F178CB /* Data+PrettyJSON.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1257BA652757F39100F178CB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1257BA662757F3A300F178CB /* AuthViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +166,9 @@
 			dependencies = (
 			);
 			name = "vk-course";
+			packageProductDependencies = (
+				1257BA552752811D00F178CB /* Alamofire */,
+			);
 			productName = "vk-course";
 			productReference = 1257BA34275277AF00F178CB /* vk-course.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 1257BA2B275277AF00F178CB;
+			packageReferences = (
+				1257BA542752811D00F178CB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1257BA35275277AF00F178CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -193,8 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1257BA642757F12F00F178CB /* Data+PrettyJSON.swift in Sources */,
+				1257BA612757EC3000F178CB /* FriendsAPI.swift in Sources */,
 				1257BA38275277AF00F178CB /* AppDelegate.swift in Sources */,
 				1257BA53275279E700F178CB /* FriendsViewController.swift in Sources */,
+				1257BA672757F3A400F178CB /* AuthViewController.swift in Sources */,
 				1257BA3A275277AF00F178CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1257BA542752811D00F178CB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1257BA552752811D00F178CB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1257BA542752811D00F178CB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1257BA2C275277AF00F178CB /* Project object */;
 }
