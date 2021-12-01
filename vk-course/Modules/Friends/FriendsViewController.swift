@@ -7,14 +7,20 @@
 
 import UIKit
 
-class FriendsViewController: UITableViewController {
+final class FriendsViewController: UITableViewController {
+    
+    let friendsAPI = FriendsAPI()
 
-    let friends = ["Jack", "Nick", "Lucky"]
+    private let friends = ["Jack", "Nick", "Lucky"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        
+        //TODO: - Сохранить в масси и отобразить
+        friendsAPI.getFriends()
 
     }
 
@@ -28,9 +34,6 @@ class FriendsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        //indexPath.row
-        //indexPath.section
         
         cell.textLabel?.text = friends[indexPath.row]
         

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fi9-yE-FU8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tVB-uL-SYc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,6 +35,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iZ-pJ-IMI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="170" y="90"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="BcI-qY-ShE">
+            <objects>
+                <viewController id="tVB-uL-SYc" customClass="AuthViewController" customModule="vk_course" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mwI-h9-she">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XU2-ol-1TN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YtN-wx-L4C"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XU2-ol-1TN" firstAttribute="top" secondItem="mwI-h9-she" secondAttribute="top" id="6ai-4P-h9H"/>
+                            <constraint firstAttribute="bottom" secondItem="XU2-ol-1TN" secondAttribute="bottom" id="NHe-1f-uJ1"/>
+                            <constraint firstItem="XU2-ol-1TN" firstAttribute="trailing" secondItem="YtN-wx-L4C" secondAttribute="trailing" id="jhD-Lu-zeB"/>
+                            <constraint firstItem="XU2-ol-1TN" firstAttribute="leading" secondItem="YtN-wx-L4C" secondAttribute="leading" id="mlg-64-H0b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="XU2-ol-1TN" id="EMm-15-ZuG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KQz-84-xgh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940.57971014492762" y="89.732142857142847"/>
         </scene>
     </scenes>
     <resources>
